@@ -1,6 +1,8 @@
 # AutoHotkey: Automation At Its Finest ❤️
 
-<a target="_blank" href="https://www.autohotkey.com/"><img align="center" alt="AutoHotKey" width="30px" style="padding-right:10px;" src="docs/AHK-Icon.svg"/><a/>
+<p align="center">
+<a target="_blank" href="https://www.autohotkey.com/"><img align="center" alt="AutoHotKey" width="90px" style="padding-right:10px;" src="docs/AHK-Icon.svg"/><a/>
+<p/>
 
 ## Why AutoHotkey Will Change Your Digital Life Forever
 
