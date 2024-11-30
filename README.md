@@ -1,8 +1,42 @@
 # AutoHotkey: Automation At Its Finest ❤️
 
+<br/>
 <p align="center">
 <a target="_blank" href="https://www.autohotkey.com/"><img align="center" alt="AutoHotKey" width="90px" style="padding-right:10px;" src="docs/AHK-Icon.svg"/><a/>
 <p/>
+<br/>
+
+- [AutoHotkey: Automation At Its Finest ❤️](#autohotkey-automation-at-its-finest-️)
+  - [Why AutoHotkey Will Change Your Digital Life Forever](#why-autohotkey-will-change-your-digital-life-forever)
+    - [What is AutoHotkey?](#what-is-autohotkey)
+  - [Let's Dive into an Epic AHK Script! 🏊‍♂️](#lets-dive-into-an-epic-ahk-script-️)
+    - [1. Basic Setup and Includes](#1-basic-setup-and-includes)
+      - [1.1. What I usually use](#11-what-i-usually-use)
+    - [2. Productivity Hotkeys 🚀](#2-productivity-hotkeys-)
+    - [3. Text Manipulation Magic ✨](#3-text-manipulation-magic-)
+      - [3.1. Why this is magical:](#31-why-this-is-magical)
+    - [4. Personal Data Shortcuts 🤖](#4-personal-data-shortcuts-)
+    - [5. Date Wizardry 📅](#5-date-wizardry-)
+      - [5.1. Time Travel Expanded](#51-time-travel-expanded)
+        - [5.1.1. Why use these formats?](#511-why-use-these-formats)
+    - [6. Application-Specific Hotkeys 🎯](#6-application-specific-hotkeys-)
+      - [6.1. Using AutoHotkey Window Spy 🕵️‍♂️](#61-using-autohotkey-window-spy-️️)
+    - [7. Reloading is your lord and savior ⭐](#7-reloading-is-your-lord-and-savior-)
+    - [8. Language and Math Shortcuts 🌐➕](#8-language-and-math-shortcuts-)
+      - [8.1. Character Expansions to Other Languages 🌍](#81-character-expansions-to-other-languages-)
+      - [8.2 Mathematical Symbol Shortcuts 🧮](#82-mathematical-symbol-shortcuts-)
+        - [8.2.1. Basic Mathematical Symbols](#821-basic-mathematical-symbols)
+        - [8.2.2. Set Theory and Logic Symbols](#822-set-theory-and-logic-symbols)
+        - [8.2.3. Greek Letters](#823-greek-letters)
+      - [8.4 Obsidian and LaTeX Integrations 📝](#84-obsidian-and-latex-integrations-)
+      - [8.5 Contextual Typing Exclusions 🛡️](#85-contextual-typing-exclusions-️)
+        - [8.5.1. Key Details](#851-key-details)
+      - [8.6 Bonus: Quick Text Corrections 🔧](#86-bonus-quick-text-corrections-)
+        - [8.6.1. Why These Shortcuts Matter](#861-why-these-shortcuts-matter)
+  - [Getting Started: Your AHK Adventure Begins! 🌟](#getting-started-your-ahk-adventure-begins-)
+    - [Pro Tips 💡](#pro-tips-)
+  - [Warning: Side Effects May Include 😂](#warning-side-effects-may-include-)
+
 
 ## Why AutoHotkey Will Change Your Digital Life Forever
 
@@ -140,7 +174,7 @@ Deletes all text to the right of the cursor (from the cursor to the end of the l
 - Never manually type dates again!
 
 
-#### Time Travel Expanded
+#### 5.1. Time Travel Expanded
 Here are examples of what each shortcut produces:
 
 - **ISO Dates (yyyy-MM-dd)**:
@@ -150,7 +184,7 @@ Here are examples of what each shortcut produces:
 - **Time (HH:mm)**:
     :hora → 14:45 (Current system time)
 
-##### Why use these formats?
+##### 5.1.1. Why use these formats?
 - `yyyy-MM-dd`: Perfect for databases, APIs, or when consistency across systems is required.
 - `dd-MM-yyyy`: User-friendly for regions like Europe or Latin America where this format is common.
 - `HH:mm`: Quick time insertion for logs or messages.
@@ -170,6 +204,41 @@ Here are examples of what each shortcut produces:
 - These hotkeys only work in specific applications
 - In Notepad++, *Ctrl + S* now reloads your script
 - Tailored automation for each app!
+
+
+
+#### 6.1. Using AutoHotkey Window Spy 🕵️‍♂️
+
+To identify window titles, class names, or executables, follow these steps:
+
+1. **Open Window Spy**:
+   - Launch **Window Spy** from your AutoHotkey installation folder, or run it from an AHK script:
+     ```autohotkey
+     Run, WindowSpy.ahk
+     ```
+
+2. **Activate the Target Application**:
+   - Switch to the application you want to analyze and ensure its window is active.
+
+3. **Review Window Spy Output**:
+   Key details are displayed:
+   - **Window Title**: The full title of the current window.
+   - **Class Name**: Shown as `ahk_class [Class Name]`, e.g., `ahk_class Chrome_WidgetWin_1`.
+   - **Executable Name**: Shown as `ahk_exe [Executable Name]`, e.g., `ahk_exe Code.exe`.
+
+4. **Choose the Identifier**:
+   - Use `ahk_exe` for precision (e.g., `datagrip64.exe`).
+   - Use `ahk_class` for broader matches across similar windows.
+   - Use partial titles for specific windows if necessary (e.g., `"SQL"`).
+
+5. **Apply in Your Script**:
+   Example of disabling hotkeys for Visual Studio Code:
+   ```autohotkey
+   #HotIf NOT WinActive("ahk_exe Code.exe")
+   ```
+
+This method ensures accurate targeting of windows, preventing unwanted hotkey interference while maintaining efficiency across your workflows.
+
 
 ### 7. Reloading is your lord and savior ⭐
 
@@ -215,7 +284,7 @@ These shortcuts help you quickly type accented characters and special punctuatio
 
 Transform your typing into a mathematical notation powerhouse with these concise symbol expansions:
 
-##### Basic Mathematical Symbols
+##### 8.2.1. Basic Mathematical Symbols
 | Shortcut   | Symbol | Meaning |
 |------------|--------|---------|
 | `:cross`   | `×`    | Multiplication |
@@ -229,7 +298,7 @@ Transform your typing into a mathematical notation powerhouse with these concise
 | `:pm`      | `±`    | Plus-minus |
 | `:inf`     | `∞`    | Infinity |
 
-##### Set Theory and Logic Symbols
+##### 8.2.2. Set Theory and Logic Symbols
 | Shortcut   | Symbol | Meaning |
 |------------|--------|---------|
 | `:forall`  | `∀`    | For all |
@@ -239,7 +308,7 @@ Transform your typing into a mathematical notation powerhouse with these concise
 | `:and`     | `∧`    | Logical AND |
 | `:subset`  | `⊂`    | Subset of |
 
-##### Greek Letters
+##### 8.2.3. Greek Letters
 | Shortcut   | Symbol | Description |
 |------------|--------|-------------|
 | `:pi`      | `π`    | Pi |
@@ -277,7 +346,7 @@ For those using Obsidian or writing LaTeX documents, these shortcuts provide qui
 
 This configuration ensures hotkeys are disabled when certain applications are active. It prevents interference with your workflow in environments like coding, database management, or gaming.
 
-##### Key Details:
+##### 8.5.1. Key Details
 - **`#HotIf`**: Creates conditional hotkeys based on window context.
 - **`NOT`**: Disables hotkeys when the conditions inside the parentheses are met.
 - **`WinActive()`**: Checks if a specific window is currently active.
@@ -292,42 +361,6 @@ For example:
 
 By excluding these applications, hotkeys stay relevant only where they’re needed.
 
----
-
-#### Using AutoHotkey Window Spy 🕵️‍♂️
-
-To identify window titles, class names, or executables, follow these steps:
-
-1. **Open Window Spy**:
-   - Launch **Window Spy** from your AutoHotkey installation folder, or run it from an AHK script:
-     ```autohotkey
-     Run, WindowSpy.ahk
-     ```
-
-2. **Activate the Target Application**:
-   - Switch to the application you want to analyze and ensure its window is active.
-
-3. **Review Window Spy Output**:
-   Key details are displayed:
-   - **Window Title**: The full title of the current window.
-   - **Class Name**: Shown as `ahk_class [Class Name]`, e.g., `ahk_class Chrome_WidgetWin_1`.
-   - **Executable Name**: Shown as `ahk_exe [Executable Name]`, e.g., `ahk_exe Code.exe`.
-
-4. **Choose the Identifier**:
-   - Use `ahk_exe` for precision (e.g., `datagrip64.exe`).
-   - Use `ahk_class` for broader matches across similar windows.
-   - Use partial titles for specific windows if necessary (e.g., `"SQL"`).
-
-5. **Apply in Your Script**:
-   Example of disabling hotkeys for Visual Studio Code:
-   ```autohotkey
-   #HotIf NOT WinActive("ahk_exe Code.exe")
-   ```
-
----
-
-This method ensures accurate targeting of windows, preventing unwanted hotkey interference while maintaining efficiency across your workflows.
-
 #### 8.6 Bonus: Quick Text Corrections 🔧
 
 Automatic corrections for common typos and accented words:
@@ -339,7 +372,7 @@ Automatic corrections for common typos and accented words:
 | `semantica`  | `semántica`  |
 | `implicita`  | `implícita`  |
 
-### Why These Shortcuts Matter 🌟
+##### 8.6.1. Why These Shortcuts Matter
 
 These AutoHotkey shortcuts transform your typing experience by:
 - Reducing repetitive keystrokes
