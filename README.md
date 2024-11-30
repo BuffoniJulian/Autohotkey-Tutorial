@@ -395,7 +395,8 @@ These AutoHotkey shortcuts transform your typing experience by:
 - Join AHK community forums
 - Experiment and have fun!
 
-## Warning: Side Effects May Include 😂
+### Warning ⚠️
+Side Effects May Include:
 - Extreme productivity
 - Jealous co-workers
 - Uncontrollable smiling
