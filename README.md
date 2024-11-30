@@ -171,7 +171,7 @@ Here are examples of what each shortcut produces:
 - In Notepad++, *Ctrl + S* now reloads your script
 - Tailored automation for each app!
 
-### 7. Best for Last ⭐
+### 7. Reloading is your lord and savior ⭐
 
 The `~+^r:: Reload()` hotkey is a developer's best friend when working with AutoHotkey scripts. Here's why it's incredibly useful:
 Why You Want the Reload Hotkey
@@ -191,6 +191,163 @@ With `~+^r:: Reload()`, you can:
 **Real-world scenario**: You're coding and realize you want to add a new hotkey or fix a small bug. Instead of breaking your concentration, you simply press *Shift + Ctrl + R*, and your script updates instantly - with zero downtime.
 It's like having a instant "refresh" button for your custom computer automation. The ~ ensures the original key combination still works (so *Shift + Ctrl + R* can still do its original function in most apps), while also triggering the script reload.
 This single line of code represents the core of AHK's power: **rapid, flexible customization** of your computing environment.
+
+### 8. Language and Math Shortcuts 🌐➕
+
+#### 8.1. Character Expansions to Other Languages 🌍
+
+These shortcuts help you quickly type accented characters and special punctuation without switching keyboard layouts:
+
+| Shortcut | Result | Description |
+|----------|--------|-------------|
+| `:ni`    | `ñ`    | Lowercase ñ |
+| `:aa`    | `á`    | Lowercase á |
+| `:ea`    | `é`    | Lowercase é |
+| `:ia`    | `í`    | Lowercase í |
+| `:oa`    | `ó`    | Lowercase ó |
+| `:ua`    | `ú`    | Lowercase ú |
+| `:?`     | `¿`    | Inverted question mark |
+| `:!`     | `¡`    | Inverted exclamation mark |
+
+**Pro Tip**: Uppercase versions are also supported (e.g., `:NI` for `Ñ`)
+
+#### 8.2 Mathematical Symbol Shortcuts 🧮
+
+Transform your typing into a mathematical notation powerhouse with these concise symbol expansions:
+
+##### Basic Mathematical Symbols
+| Shortcut   | Symbol | Meaning |
+|------------|--------|---------|
+| `:cross`   | `×`    | Multiplication |
+| `:perp`    | `⊥`    | Perpendicular |
+| `:tick`    | `✓`    | Checkmark |
+| `:to`      | `→`    | Implies/Goes to |
+| `:geq`     | `≥`    | Greater than or equal to |
+| `:leq`     | `≤`    | Less than or equal to |
+| `:neq`     | `≠`    | Not equal to |
+| `:aprox`   | `≅`    | Approximately equal |
+| `:pm`      | `±`    | Plus-minus |
+| `:inf`     | `∞`    | Infinity |
+
+##### Set Theory and Logic Symbols
+| Shortcut   | Symbol | Meaning |
+|------------|--------|---------|
+| `:forall`  | `∀`    | For all |
+| `:exists`  | `∃`    | There exists |
+| `:in`      | `∈`    | Element of |
+| `:or`      | `∨`    | Logical OR |
+| `:and`     | `∧`    | Logical AND |
+| `:subset`  | `⊂`    | Subset of |
+
+##### Greek Letters
+| Shortcut   | Symbol | Description |
+|------------|--------|-------------|
+| `:pi`      | `π`    | Pi |
+| `:omega`   | `ω`    | Lowercase omega |
+| `:Omega`   | `Ω`    | Uppercase omega |
+| `:alpha`   | `α`    | Alpha |
+| `:beta`    | `β`    | Beta |
+| `:delta`   | `δ`    | Lowercase delta |
+| `:Delta`   | `Δ`    | Uppercase delta |
+| `:sigma`   | `σ`    | Sigma |
+| `:lambda`  | `λ`    | Lambda |
+
+#### 8.4 Obsidian and LaTeX Integrations 📝
+
+For those using Obsidian or writing LaTeX documents, these shortcuts provide quick text formatting and mathematical notation:
+
+| Shortcut   | Expansion | Use Case |
+|------------|-----------|----------|
+| `:bold`    | `\textbf{}` | Bold text in LaTeX |
+| `:vec`     | `\vec{}` | Vector notation |
+| `:frac`    | `\frac{}{}` | Fraction |
+| `:sum`     | `\displaystyle\sum` | Summation |
+| `:lim`     | `\lim_{}` | Limit |
+| `:integ1`  | `∫`        | Simple integral |
+| `:integ2`  | `∫^{}_{}` | Definite integral |
+
+#### 8.5 Contextual Typing Exclusions 🛡️
+
+```autohotkey
+#HotIf NOT (WinActive("ahk_class SunAwtFrame") or WinActive("SQL") or 
+            WinActive("Visual Studio Code") or WinActive("Azure") or 
+            WinActive("ahk_exe datagrip64.exe") or 
+            WinActive("ahk_exe FSD-WinGDK-Shipping.exe"))
+```
+
+This configuration ensures hotkeys are disabled when certain applications are active. It prevents interference with your workflow in environments like coding, database management, or gaming.
+
+##### Key Details:
+- **`#HotIf`**: Creates conditional hotkeys based on window context.
+- **`NOT`**: Disables hotkeys when the conditions inside the parentheses are met.
+- **`WinActive()`**: Checks if a specific window is currently active.
+  - **`ahk_class`**: Identifies windows by their internal class names.
+  - **`ahk_exe`**: Targets applications by their executable names.
+  - Text like "SQL" matches partial window titles.
+
+For example:
+- **`ahk_class SunAwtFrame`**: Often Java-based apps like IntelliJ.
+- **`ahk_exe datagrip64.exe`**: Refers to DataGrip, a database IDE.
+- **`FSD-WinGDK-Shipping.exe`**: Likely a game executable.
+
+By excluding these applications, hotkeys stay relevant only where they’re needed.
+
+---
+
+#### Using AutoHotkey Window Spy 🕵️‍♂️
+
+To identify window titles, class names, or executables, follow these steps:
+
+1. **Open Window Spy**:
+   - Launch **Window Spy** from your AutoHotkey installation folder, or run it from an AHK script:
+     ```autohotkey
+     Run, WindowSpy.ahk
+     ```
+
+2. **Activate the Target Application**:
+   - Switch to the application you want to analyze and ensure its window is active.
+
+3. **Review Window Spy Output**:
+   Key details are displayed:
+   - **Window Title**: The full title of the current window.
+   - **Class Name**: Shown as `ahk_class [Class Name]`, e.g., `ahk_class Chrome_WidgetWin_1`.
+   - **Executable Name**: Shown as `ahk_exe [Executable Name]`, e.g., `ahk_exe Code.exe`.
+
+4. **Choose the Identifier**:
+   - Use `ahk_exe` for precision (e.g., `datagrip64.exe`).
+   - Use `ahk_class` for broader matches across similar windows.
+   - Use partial titles for specific windows if necessary (e.g., `"SQL"`).
+
+5. **Apply in Your Script**:
+   Example of disabling hotkeys for Visual Studio Code:
+   ```autohotkey
+   #HotIf NOT WinActive("ahk_exe Code.exe")
+   ```
+
+---
+
+This method ensures accurate targeting of windows, preventing unwanted hotkey interference while maintaining efficiency across your workflows.
+
+#### 8.6 Bonus: Quick Text Corrections 🔧
+
+Automatic corrections for common typos and accented words:
+
+| Typo         | Correction   |
+|--------------|--------------|
+| `nomina`     | `nómina`     |
+| `preambulo`  | `preámbulo`  |
+| `semantica`  | `semántica`  |
+| `implicita`  | `implícita`  |
+
+### Why These Shortcuts Matter 🌟
+
+These AutoHotkey shortcuts transform your typing experience by:
+- Reducing repetitive keystrokes
+- Making mathematical and Spanish typing faster
+- Providing quick access to complex symbols
+- Customizing your workflow across different applications
+
+**Remember:** Automation is about making technology work for you, not the other way around! 💻✨
 
 ## Getting Started: Your AHK Adventure Begins! 🌟
 
