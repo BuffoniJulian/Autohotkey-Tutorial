@@ -205,8 +205,6 @@ Here are examples of what each shortcut produces:
 - In Notepad++, *Ctrl + S* now reloads your script
 - Tailored automation for each app!
 
-
-
 #### 6.1. Using AutoHotkey Window Spy 🕵️‍♂️
 
 To identify window titles, class names, or executables, follow these steps:
@@ -238,7 +236,6 @@ To identify window titles, class names, or executables, follow these steps:
    ```
 
 This method ensures accurate targeting of windows, preventing unwanted hotkey interference while maintaining efficiency across your workflows.
-
 
 ### 7. Reloading is your lord and savior ⭐
 
@@ -381,6 +378,101 @@ These AutoHotkey shortcuts transform your typing experience by:
 - Customizing your workflow across different applications
 
 **Remember:** Automation is about making technology work for you, not the other way around! 💻✨
+
+Perfecto, tu estilo de documentación es claro, atractivo y útil, y tus ejemplos están bien explicados. Para integrarlo a tu repo en GitHub manteniendo esa coherencia, podrías presentar la nueva sección de esta forma:
+
+---
+
+### 9. Smart App Launching & Window Toggling 🚀
+
+With a single hotkey, you get **multiple intelligent behaviors**:
+
+1. **App Not Running?** → Launch it
+2. **App Running but Not Active?** → Focus it
+3. **App Already Active?** → Minimize it (toggle off)
+
+```autohotkey
+#W:: ; Win + W → WhatsApp Launcher & Toggle
+{
+    if (!WinExist("WhatsApp")) {
+        Run("C:\Path\To\Your\AppShortcut.lnk")
+        WinWait("WhatsApp")
+        WinActivate("WhatsApp")
+        WinWaitActive("WhatsApp")
+        Sleep(75)
+        Send("+{TAB}") ; optional: moves focus to content pane
+    }
+    else if (!WinActive("WhatsApp")) {
+        WinActivate("WhatsApp")
+        WinWaitActive("WhatsApp")
+    } else {
+        WinMinimize("WhatsApp")
+    }
+    return
+}
+```
+
+#### Why this is 🔥:
+
+* **One Key, Three Functions**: Switch between launching, focusing, or minimizing with no extra keys.
+* **No Dupes**: Avoids opening the same app twice.
+* **Context-Aware**: Automatically knows what you want based on app state.
+* **Extendable**: Works great with any app (Discord, Obsidian, VS Code, etc.)
+
+#### Pro Tips:
+
+* Add `WinWait()` after `Run()` to ensure the window is ready before interacting.
+* Use `Sleep()` to give the app time to load UI elements, especially with web-based apps.
+
+### 10. Visual GUIs como Notificaciones Contextuales en AutoHotkey v2 🪟
+
+```autohotkey
+; Mostrar una notificación moderna con estilo Windows 11
+myGui := Gui()
+myGui.Opt("-Caption +AlwaysOnTop +ToolWindow")
+myGui.SetFont("s11 cWhite", "FiraCode Nerd Font")
+myGui.Add("Text", "x20 y20 w400", "¡Recordá repasar tus puntos clave!")
+myGui.Show("AutoSize")
+
+; Aplicar efecto blur tipo acrylic (Windows 10/11)
+EnableAcrylic(myGui.Hwnd, 0xCC090C13)
+```
+
+### ¿Qué son los GUIs en AHK v2?
+
+En AutoHotkey v2, los GUIs (`Gui()`) te permiten crear **interfaces visuales simples** directamente desde tus scripts. Esto va desde ventanas flotantes hasta formularios interactivos. No hace falta compilar ni usar herramientas externas.
+
+En este ejemplo, usamos un GUI como una **notificación visual personalizada**, con fuente profesional y fondo translúcido, que puede mostrarse automáticamente al abrir una aplicación o ejecutar una acción.
+
+---
+
+### 🧠 ¿Para qué sirve esto?
+
+Podés usar GUIs como notificaciones dinámicas o ayudas visuales que aparecen justo cuando más las necesitás, por ejemplo:
+
+* Mostrar **recordatorios o tips** al abrir una app
+* Indicar el **estado de una automatización**
+* Proveer **referencias rápidas** sin distraerte
+* Ofrecer **opciones de interacción básica** (como botones)
+
+---
+
+### 🎯 Ventajas de usar GUIs como notificaciones:
+
+* **100% personalizables**: Colores, fuentes, tamaño, posición, íconos, botones, etc.
+* **Integración total**: Se ejecutan desde el mismo script que lanza o controla tus apps
+* **Estética moderna**: Podés usar blur, transparencia, esquinas redondeadas y más (como en Windows 11)
+* **Minimalismo útil**: No molestan, pero están siempre visibles si las necesitás
+* **Cierre automático o con botón**: Perfecto para mantener el foco
+
+---
+
+### 💡 Casos reales de uso:
+
+* Abrís una aplicación → aparece una GUI con consejos, shortcuts o próximos pasos
+* Ejecutás un script → aparece una GUI que te recuerda tus tareas del día
+* Cambiás de entorno o perfil → la GUI muestra configuraciones relevantes
+* Detectás un evento (como conectar auriculares) → aparece una notificación personalizada
 
 ## Getting Started: Your AHK Adventure Begins! 🌟
 
