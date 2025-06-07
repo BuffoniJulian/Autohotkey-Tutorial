@@ -33,6 +33,8 @@
         - [8.5.1. Key Details](#851-key-details)
       - [8.6 Bonus: Quick Text Corrections 🔧](#86-bonus-quick-text-corrections-)
         - [8.6.1. Why These Shortcuts Matter](#861-why-these-shortcuts-matter)
+    - [9. Smart App Launching & Window Management 🚀](#9-smart-app-launching--window-management-)
+    - [10. Visual GUIs as Contextual Notifications 🎨](#10-visual-guis-as-contextual-notifications-)
   - [Getting Started: Your AHK Adventure Begins! 🌟](#getting-started-your-ahk-adventure-begins-)
     - [Pro Tips 💡](#pro-tips-)
   - [Warning: Side Effects May Include 😂](#warning-side-effects-may-include-)
