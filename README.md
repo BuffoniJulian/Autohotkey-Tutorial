@@ -485,7 +485,7 @@ You can use GUIs as dynamic notifications or helpful overlays that appear exactl
 - Join AHK community forums
 - Experiment and have fun!
 
-### Warning ⚠️
+### Warning ⚠
 Side Effects May Include:
 - Extreme productivity
 - Jealous co-workers
