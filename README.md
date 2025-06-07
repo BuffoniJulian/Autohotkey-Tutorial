@@ -379,10 +379,6 @@ These AutoHotkey shortcuts transform your typing experience by:
 
 **Remember:** Automation is about making technology work for you, not the other way around! 💻✨
 
-Perfecto, tu estilo de documentación es claro, atractivo y útil, y tus ejemplos están bien explicados. Para integrarlo a tu repo en GitHub manteniendo esa coherencia, podrías presentar la nueva sección de esta forma:
-
----
-
 ### 9. Smart App Launching & Window Toggling 🚀
 
 With a single hotkey, you get **multiple intelligent behaviors**:
@@ -424,55 +420,55 @@ With a single hotkey, you get **multiple intelligent behaviors**:
 * Add `WinWait()` after `Run()` to ensure the window is ready before interacting.
 * Use `Sleep()` to give the app time to load UI elements, especially with web-based apps.
 
-### 10. Visual GUIs como Notificaciones Contextuales en AutoHotkey v2 🪟
+### 10. Visual GUIs as Contextual Notifications
 
 ```autohotkey
-; Mostrar una notificación moderna con estilo Windows 11
+; Display a modern Windows 11-style notification
 myGui := Gui()
 myGui.Opt("-Caption +AlwaysOnTop +ToolWindow")
 myGui.SetFont("s11 cWhite", "FiraCode Nerd Font")
-myGui.Add("Text", "x20 y20 w400", "¡Recordá repasar tus puntos clave!")
+myGui.Add("Text", "x20 y20 w400", "Remember to review your key points!")
 myGui.Show("AutoSize")
 
-; Aplicar efecto blur tipo acrylic (Windows 10/11)
+; Apply acrylic blur effect (Windows 10/11)
 EnableAcrylic(myGui.Hwnd, 0xCC090C13)
 ```
 
-### ¿Qué son los GUIs en AHK v2?
+### What are GUIs?
 
-En AutoHotkey v2, los GUIs (`Gui()`) te permiten crear **interfaces visuales simples** directamente desde tus scripts. Esto va desde ventanas flotantes hasta formularios interactivos. No hace falta compilar ni usar herramientas externas.
+GUIs (`Gui()`) let you create **simple visual interfaces** directly from your scripts — anything from floating notifications to interactive forms. No need for compiling or external tools.
 
-En este ejemplo, usamos un GUI como una **notificación visual personalizada**, con fuente profesional y fondo translúcido, que puede mostrarse automáticamente al abrir una aplicación o ejecutar una acción.
-
----
-
-### 🧠 ¿Para qué sirve esto?
-
-Podés usar GUIs como notificaciones dinámicas o ayudas visuales que aparecen justo cuando más las necesitás, por ejemplo:
-
-* Mostrar **recordatorios o tips** al abrir una app
-* Indicar el **estado de una automatización**
-* Proveer **referencias rápidas** sin distraerte
-* Ofrecer **opciones de interacción básica** (como botones)
+In this example, we use a GUI as a **custom visual notification**, with professional fonts and a translucent background, that can appear automatically when you launch an app or trigger a specific action.
 
 ---
 
-### 🎯 Ventajas de usar GUIs como notificaciones:
+### 🧠 Why use this?
 
-* **100% personalizables**: Colores, fuentes, tamaño, posición, íconos, botones, etc.
-* **Integración total**: Se ejecutan desde el mismo script que lanza o controla tus apps
-* **Estética moderna**: Podés usar blur, transparencia, esquinas redondeadas y más (como en Windows 11)
-* **Minimalismo útil**: No molestan, pero están siempre visibles si las necesitás
-* **Cierre automático o con botón**: Perfecto para mantener el foco
+You can use GUIs as dynamic notifications or helpful overlays that appear exactly when you need them. For example:
+
+* Show **reminders or tips** when launching an app
+* Indicate the **status of an automation**
+* Display **quick reference notes** without switching windows
+* Provide **basic interaction** (like buttons or confirmations)
 
 ---
 
-### 💡 Casos reales de uso:
+### 🎯 Benefits of using GUIs as notifications:
 
-* Abrís una aplicación → aparece una GUI con consejos, shortcuts o próximos pasos
-* Ejecutás un script → aparece una GUI que te recuerda tus tareas del día
-* Cambiás de entorno o perfil → la GUI muestra configuraciones relevantes
-* Detectás un evento (como conectar auriculares) → aparece una notificación personalizada
+* **Fully customizable**: Colors, fonts, size, position, icons, buttons, etc.
+* **Seamless integration**: Part of the same script that launches or manages your apps
+* **Modern look**: Supports blur, transparency, rounded corners (just like Windows 11)
+* **Minimal yet helpful**: Stays visible when needed, out of the way when not
+* **Auto-dismiss or manual close**: Great for keeping focus
+
+---
+
+### 💡 Real-world use cases:
+
+* You launch an app → a GUI appears with tips, shortcuts, or next steps
+* You run a script → a GUI reminds you of your daily tasks
+* You switch environments or profiles → the GUI shows relevant settings
+* You detect an event (like plugging in headphones) → a personalized notification pops up
 
 ## Getting Started: Your AHK Adventure Begins! 🌟
 
