@@ -37,7 +37,7 @@
     - [10. Visual GUIs as Contextual Notifications](#10-visual-guis-as-contextual-notifications)
   - [Getting Started: Your AHK Adventure Begins! 🌟](#getting-started-your-ahk-adventure-begins-)
     - [Pro Tips 💡](#pro-tips-)
-  - [Warning ⚠️](#warning-)
+  - [Warning ⚠](#warning-)
 
 
 ## Why AutoHotkey Will Change Your Digital Life Forever
