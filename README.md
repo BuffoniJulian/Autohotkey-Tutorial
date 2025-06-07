@@ -205,8 +205,6 @@ Here are examples of what each shortcut produces:
 - In Notepad++, *Ctrl + S* now reloads your script
 - Tailored automation for each app!
 
-
-
 #### 6.1. Using AutoHotkey Window Spy 🕵️‍♂️
 
 To identify window titles, class names, or executables, follow these steps:
@@ -238,7 +236,6 @@ To identify window titles, class names, or executables, follow these steps:
    ```
 
 This method ensures accurate targeting of windows, preventing unwanted hotkey interference while maintaining efficiency across your workflows.
-
 
 ### 7. Reloading is your lord and savior ⭐
 
@@ -381,6 +378,97 @@ These AutoHotkey shortcuts transform your typing experience by:
 - Customizing your workflow across different applications
 
 **Remember:** Automation is about making technology work for you, not the other way around! 💻✨
+
+### 9. Smart App Launching & Window Toggling 🚀
+
+With a single hotkey, you get **multiple intelligent behaviors**:
+
+1. **App Not Running?** → Launch it
+2. **App Running but Not Active?** → Focus it
+3. **App Already Active?** → Minimize it (toggle off)
+
+```autohotkey
+#W:: ; Win + W → WhatsApp Launcher & Toggle
+{
+    if (!WinExist("WhatsApp")) {
+        Run("C:\Path\To\Your\AppShortcut.lnk")
+        WinWait("WhatsApp")
+        WinActivate("WhatsApp")
+        WinWaitActive("WhatsApp")
+        Sleep(75)
+        Send("+{TAB}") ; optional: moves focus to content pane
+    }
+    else if (!WinActive("WhatsApp")) {
+        WinActivate("WhatsApp")
+        WinWaitActive("WhatsApp")
+    } else {
+        WinMinimize("WhatsApp")
+    }
+    return
+}
+```
+
+#### Why this is 🔥:
+
+* **One Key, Three Functions**: Switch between launching, focusing, or minimizing with no extra keys.
+* **No Dupes**: Avoids opening the same app twice.
+* **Context-Aware**: Automatically knows what you want based on app state.
+* **Extendable**: Works great with any app (Discord, Obsidian, VS Code, etc.)
+
+#### Pro Tips:
+
+* Add `WinWait()` after `Run()` to ensure the window is ready before interacting.
+* Use `Sleep()` to give the app time to load UI elements, especially with web-based apps.
+
+### 10. Visual GUIs as Contextual Notifications
+
+```autohotkey
+; Display a modern Windows 11-style notification
+myGui := Gui()
+myGui.Opt("-Caption +AlwaysOnTop +ToolWindow")
+myGui.SetFont("s11 cWhite", "FiraCode Nerd Font")
+myGui.Add("Text", "x20 y20 w400", "Remember to review your key points!")
+myGui.Show("AutoSize")
+
+; Apply acrylic blur effect (Windows 10/11)
+EnableAcrylic(myGui.Hwnd, 0xCC090C13)
+```
+
+### What are GUIs?
+
+GUIs (`Gui()`) let you create **simple visual interfaces** directly from your scripts — anything from floating notifications to interactive forms. No need for compiling or external tools.
+
+In this example, we use a GUI as a **custom visual notification**, with professional fonts and a translucent background, that can appear automatically when you launch an app or trigger a specific action.
+
+---
+
+### 🧠 Why use this?
+
+You can use GUIs as dynamic notifications or helpful overlays that appear exactly when you need them. For example:
+
+* Show **reminders or tips** when launching an app
+* Indicate the **status of an automation**
+* Display **quick reference notes** without switching windows
+* Provide **basic interaction** (like buttons or confirmations)
+
+---
+
+### 🎯 Benefits of using GUIs as notifications:
+
+* **Fully customizable**: Colors, fonts, size, position, icons, buttons, etc.
+* **Seamless integration**: Part of the same script that launches or manages your apps
+* **Modern look**: Supports blur, transparency, rounded corners (just like Windows 11)
+* **Minimal yet helpful**: Stays visible when needed, out of the way when not
+* **Auto-dismiss or manual close**: Great for keeping focus
+
+---
+
+### 💡 Real-world use cases:
+
+* You launch an app → a GUI appears with tips, shortcuts, or next steps
+* You run a script → a GUI reminds you of your daily tasks
+* You switch environments or profiles → the GUI shows relevant settings
+* You detect an event (like plugging in headphones) → a personalized notification pops up
 
 ## Getting Started: Your AHK Adventure Begins! 🌟
 
